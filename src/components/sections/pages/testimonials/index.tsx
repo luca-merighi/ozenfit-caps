@@ -1,8 +1,35 @@
+import TestimonialsList from '@/components/testimonials-list'
 import SectionTemplate from '../../section-template'
 import TextPill from '../../text-pill'
-import TestimonialsList from './testimonials-list'
 
 import { IoChatbubbleEllipses } from 'react-icons/io5'
+
+const list = [
+    {
+        profileImage: '/images/profiles/img-1.png',
+        name: 'Olívia Magalhães',
+        age: 35,
+        description: 'Super Recomendo! Produto condiz com o resultado que tive , inclusive já fiz novo pedido , desde já agradeço todos vocês.'
+    },
+    {
+        profileImage: '/images/profiles/img-2.png',
+        name: 'Carla Cristina',
+        age: 38,
+        description: 'Nossa, me sinto muito mais confiante com as mudanças no meu corpo que tive até aqui, minha barriga vivia estufada, parecia que eu estava doente, estou muito satisfeita, estou amando o tratamento! Recomendo demais pessoal!'
+    },
+    {
+        profileImage: '/images/profiles/img-3.png',
+        name: 'José Rodrigues',
+        age: 49,
+        description: 'Produto realmente funciona. Mudança incrível para os primeiros dias, já estou sentindo diferença na pochete e também na saciedade.'
+    },
+    {
+        profileImage: '/images/profiles/img-4.png',
+        name: 'Márcia Andrade',
+        age: 42,
+        description: 'Produto chegou super rápido, antes mesmo da data prevista. Amei o OZENFIT CAPS, com certeza comprarei mais vezes, pois sofro com gordurinhas indesejadas desde a minha primeira gravidez! Recomendo!'
+    },
+]
 
 export default function Testimonials() {
     return (
@@ -25,7 +52,7 @@ export default function Testimonials() {
 
             </div>
 
-            <TestimonialsList />
+            <TestimonialsList list={list} testimonialType="card" />
 
             <p className="
                 px-2 py-1 xl:pl-3 xl:py-2 bg-slate-150

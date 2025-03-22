@@ -27,7 +27,12 @@ const list = [
         value: 'value5',
         title: 'Como posso comprar o OzenFit Caps?',
         description: 'Para oferecer um produto com segurança, o OzenFit Caps é vendido apenas através deste site oficial. A venda do do OzenFit através de qualquer outro site pode colocar a sua SAÚDE EM RISCO. Não compre falsificações e garanta um produto de qualidade comprando APENAS através deste site oficial.'
-    }
+    },
+    {
+        value: 'value6',
+        title: 'Como funciona a garantia?',
+        description: 'Se em 90 dias você não perder pelo menos 5kg ou não sentir nenhuma diferença, devolvemos 100% do seu dinheiro – sem burocracia. É só entrar em contato comigo aqui no WhatsApp, me contar sua experiência, e eu cuido do reembolso rapidinho.'
+    },
 ]
 
 export default function FAQList() {

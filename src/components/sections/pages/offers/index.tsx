@@ -4,13 +4,32 @@ import WhatsAppLink from '@/components/whatsapp-link'
 import OfferItems from './offer-items'
 
 import { PiPillFill  } from 'react-icons/pi'
+import TestimonialsList from '@/components/testimonials-list'
+
+const list = [
+    {
+        image: '/images/success-cases/img-1.png',
+    },
+    {
+        image: '/images/success-cases/img-2.png',
+    },
+    {
+        image: '/images/success-cases/img-3.png',
+    },
+    {
+        image: '/images/success-cases/img-4.png',
+    },
+    {
+        image: '/images/success-cases/img-5.png',
+    }
+]
 
 export default function Offers() {
     return (
         <SectionTemplate
             id="offers"
             newBGColor="bg-gradient-to-t from-emerald-500 via-emerald-400 via-emerald-300 via-emerald-200 via-emerald-100 to-emerald-50"
-            flexClass="flex flex-col gap-20">
+            flexClass="flex flex-col gap-20 items-center">
             <div className="flex flex-col gap-3">
                 <TextPill
                     bgGradientColor="bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400"
@@ -43,6 +62,8 @@ export default function Offers() {
             </div>
 
             <OfferItems />
+
+            <TestimonialsList list={list} testimonialType="image" />
         </SectionTemplate>
     )
 }
