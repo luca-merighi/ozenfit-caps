@@ -2,27 +2,9 @@ import SectionTemplate from '../../section-template'
 import TextPill from '../../text-pill'
 import WhatsAppLink from '@/components/whatsapp-link'
 import OfferItems from './offer-items'
+import TestimonialsList from './testimonials-list'
 
 import { PiPillFill  } from 'react-icons/pi'
-import TestimonialsList from '@/components/testimonials-list'
-
-const list = [
-    {
-        image: '/images/success-cases/img-1.png',
-    },
-    {
-        image: '/images/success-cases/img-2.png',
-    },
-    {
-        image: '/images/success-cases/img-3.png',
-    },
-    {
-        image: '/images/success-cases/img-4.png',
-    },
-    {
-        image: '/images/success-cases/img-5.png',
-    }
-]
 
 export default function Offers() {
     return (
@@ -63,7 +45,7 @@ export default function Offers() {
 
             <OfferItems />
 
-            <TestimonialsList list={list} testimonialType="image" />
+            <TestimonialsList />
         </SectionTemplate>
     )
 }

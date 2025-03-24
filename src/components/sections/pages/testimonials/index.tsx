@@ -1,8 +1,8 @@
-import TestimonialsList from '@/components/testimonials-list'
 import SectionTemplate from '../../section-template'
 import TextPill from '../../text-pill'
 
 import { IoChatbubbleEllipses } from 'react-icons/io5'
+import TestimonialsList from './testimonials-list'
 
 const list = [
     {
@@ -52,7 +52,7 @@ export default function Testimonials() {
 
             </div>
 
-            <TestimonialsList list={list} testimonialType="card" />
+            <TestimonialsList />
 
             <p className="
                 px-2 py-1 xl:pl-3 xl:py-2 bg-slate-150

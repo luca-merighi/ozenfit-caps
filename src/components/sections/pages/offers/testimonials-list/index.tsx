@@ -3,57 +3,57 @@
 import { useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 
+import 'keen-slider/keen-slider.min.css'
 import ListItem from './list-item'
 
-import 'keen-slider/keen-slider.min.css'
+const list = [
+    {
+        image: '/images/success-cases/img-1.png',
+    },
+    {
+        image: '/images/success-cases/img-2.png',
+    },
+    {
+        image: '/images/success-cases/img-3.png',
+    },
+    {
+        image: '/images/success-cases/img-4.png',
+    },
+    {
+        image: '/images/success-cases/img-5.png',
+    }
+]
 
-export interface CardItem {
-    profileImage: string,
-    name: string,
-    age: number,
-    description: string
-}
-
-export interface ImageItem {
-    image: string
-}
-
-interface TestimonialsListProps {
-    list: CardItem[] | ImageItem[],
-    testimonialType: 'card' | 'image'
-}
-
-export default function TestimonialsList({ list, testimonialType }: TestimonialsListProps) {
+export default function TestimonialsList() {
     const [loaded, setLoaded] = useState(false)
-    const [currentSlide, setCurrentSlide] = useState(0)
-    const [sliderRef, instanceRef] = useKeenSlider<HTMLUListElement>({
-        initial: 0,
-        breakpoints: {
-            "(min-width: 425px)": {
-                slides: { perView: 1, spacing: 16 }
+        const [currentSlide, setCurrentSlide] = useState(0)
+        const [sliderRef, instanceRef] = useKeenSlider<HTMLUListElement>({
+            initial: 0,
+            breakpoints: {
+                "(min-width: 425px)": {
+                    slides: { perView: 1, spacing: 16 }
+                },
+                "(min-width: 768px)": {
+                    slides: { perView: 2, spacing: 16 },
+                },
+                "(min-width: 1024px)": {
+                    slides: { perView: 3,  spacing: 16 }
+                }
             },
-            "(min-width: 768px)": {
-                slides: { perView: 2, spacing: 16 },
+            slides: {
+                perView: 1,
+                spacing: 16
             },
-            "(min-width: 1024px)": {
-                slides: { perView: 3,  spacing: 16 }
+            slideChanged(slider) {
+                setCurrentSlide(slider.track.details.rel)
+            },
+            created() {
+                setLoaded(true)
             }
-        },
-        slides: {
-            perView: 1,
-            spacing: 16
-        },
-        slideChanged(slider) {
-            setCurrentSlide(slider.track.details.rel)
-        },
-        created() {
-            setLoaded(true)
-        }
-    })
+        })
 
     return (
-        <div className="
-            w-[20rem] md:w-[40rem] lg:w-[50rem] xl:w-[65rem]
+        <div className="w-[20rem] md:w-[40rem] lg:w-[50rem] xl:w-[65rem]
             flex flex-col gap-4 items-center">
             <ul
                 ref={sliderRef}
@@ -61,9 +61,8 @@ export default function TestimonialsList({ list, testimonialType }: Testimonials
                 {list.map((item, index) => {
                     return (
                         <ListItem
-                            testimonialType={testimonialType}
-                            item={item}
-                            key={index} />
+                            key={`success-case-${index}`}
+                            image={item.image} />
                     )
                 })}
             </ul>
@@ -88,5 +87,6 @@ export default function TestimonialsList({ list, testimonialType }: Testimonials
                 </div>
             )}
         </div>
+
     )
 }
