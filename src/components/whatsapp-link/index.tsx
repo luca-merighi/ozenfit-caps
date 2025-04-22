@@ -11,7 +11,7 @@ interface WhatsAppLinkProps {
 export default function WhatsAppLink({ CSSClass, iconSize, text }: WhatsAppLinkProps) {
     return (
         <Link
-            href="https://api.whatsapp.com/send?phone=+5519983036302&text=Oi! Me chamo [Nome], tenho [Idade] anos e quero perder [X] quilos com o OZENFIT CAPS. Me explica como funciona?"
+            href="https://api.whatsapp.com/send?phone=+5519981906576&text=Olá! Tenho interesse e queria mais informações, por favor."
             title="Entrar em Contato por WhatsApp"
             target="_blank"
             className={`
